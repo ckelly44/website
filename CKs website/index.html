@@ -4,11 +4,14 @@
 		<title>Colin Kelly</title>
 		<link rel="stylesheet" type="text/css" href="./css/styles.css">
 		<link href="https://fonts.googleapis.com/css?family=Condiment&display=swap" rel="stylesheet">
-		
-<link href="https://fonts.googleapis.com/css?family=Titillium+Web:300i&display=swap" rel="stylesheet">
-
+		<link href="https://fonts.googleapis.com/css?family=Titillium+Web:300i&display=swap" rel="stylesheet">
+    	<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+		<script type="text/javascript" src="./js/my.js"></script>
 	</head>
 	<body>
+		<div id="test1"><div id="z"><button id="x" onclick="exitDiv()">X</button></div></div>
+		<div id="test2"><div id="z"><button id="x" onclick="exitDiv()">X</button></div></div>
+		<div id="test3"><div id="z"><button id="x" onclick="exitDiv()">X</button></div></div>
 		<header id="header">
 			<div id="me"><h2>Colin Kelly</h2></div>
 			<ul id="menu">
@@ -21,7 +24,7 @@
 		<main>
 			<div class="row" id="welcome">
 				<div class="content">
-					<h1>Welcome</h1>
+					<div id="welcomevisitor"><h1>Welcome</h1><h1 id="visitor"></h1></div>
 					<p>welcome welcome welcome welcome welcome welcome welcome welcome welcome welcome welcome welcome welcome welcome welcome welcome welcome welcome welcome welcome welcome welcome welcome welcome welcome welcome welcome welcome welcome welcome welcome welcome welcome welcome welcome welcome welcome welcome welcome welcome welcome welcome welcome welcome welcome welcome welcome welcome welcome welcome welcome welcome welcome welcome welcome welcome welcome welcome welcome welcome welcome welcome welcome welcome welcome welcome welcome welcome welcome welcome welcome welcome welcome welcome welcome welcome welcome welcome welcome welcome</p>
 					<a href="#p1">Projects</a>
 				</div>
@@ -32,15 +35,14 @@
 				<div class="content">
 					<h1>Project 1</h1>
 					<p>project1 project1 project1 project1 project1 project1 project1 project1 project1 project1 project1 project1 project1 project1 project1 project1 project1 project1 project1 project1 project1 project1 project1 project1 project1 project1 project1 project1 project1 project1 project1 project1 project1 project1 project1 project1 project1 project1 project1 project1 project1 project1 project1 project1 project1 project1 project1 project1 project1 project1 project1 project1 project1 project1 project1 project1 project1 project1 project1 project1 project1 project1 project1 project1 project1 project1 project1 project1 project1 project1 project1 project1</p>
-					<a href="#">Learn more</a>
+					<a onclick="show(1)">Learn more</a>
 				</div>
-				
 			</div>
 			<div class="row" id="p2">
 				<div class="content">
 					<h1>Project 2</h1>
 					<p>project2 project2 project2 project2 project2 project2 project2 project2 project2 project2 project2 project2 project2 project2 project2 project2 project2 project2 project2 project2 project2 project2 project2 project2 project2 project2 project2 project2 project2 project2 project2 project2 project2 project2 project2 project2 project2 project2 project2 project2 project2 project2 project2 project2 project2 project2 project2 project2 project2 project2 project2 project2 project2 project2 project2 project2 project2 project2 project2 project2 project2 project2 project2 project2 project2 project2 project2 project2 project2 project2 project2 project2</p>
-					<a href="#">Learn more</a>
+					<a  onclick="show(2)">Learn more</a>
 				</div>
 				<div class="image right"><img src="./images/3.jpeg"></div>
 			</div>
@@ -49,10 +51,11 @@
 				<div class="content">
 					<h1>Project 3</h1>
 					<p>project3 project3 project3 project3 project3 project3 project3 project3 project3 project3 project3 project3 project3 project3 project3 project3 project3 project3 project3 project3 project3 project3 project3 project3 project3 project3 project3 project3 project3 project3 project3 project3 project3 project3 project3 project3 project3 project3 project3 project3 project3 project3 project3 project3 project3 project3 project3 project3 project3 project3 project3 project3 project3 project3 project3 project3 project3 project3 project3 project3 project3 project3 project3 project3 project3 project3 project3 project3 project3 project3 project3 project3</p>
-					<a href="#">Learn more</a>
+					<a onclick="show(3)">Learn more</a>
 				</div>
 			</div>
 		</main>
+		<!--
 		<footer id="footer">
 			<div></div>
 			<ul id="icons">
@@ -62,6 +65,6 @@
 			</ul>
 			<div></div>
 		</footer>
+		-->
 	</body>
-
 </html>
