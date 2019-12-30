@@ -1,14 +1,27 @@
+/*
+
+
+	Section: general formatting
+
+
+*/
 * {
 	box-sizing: border-box;
 	margin: 0;
+    font-family: 'Source Sans Pro', sans-serif;
 }
 html {
 	scroll-behavior: smooth;
 }
-#i1, #iw, #i2, #i3 {
-	visibility: hidden;
-}
-#test1, #test2, #test3 {
+/*
+
+
+	Section: Project preview pop-up windows
+
+
+*/
+.preview {
+	z-index: 50;
 	display: none;
 	background-color: black;
 	position: absolute;
@@ -19,7 +32,7 @@ html {
 	right: 0;
 	left: 0;
 	margin: auto;
-	animation-name: example;
+	animation-name: displayPreview;
 	animation-duration: 0.5s;
 	box-shadow: 0 0 0 500vh rgba(0, 0, 0, 0.8);
 }
@@ -35,50 +48,19 @@ html {
 	background-color: green;
 	top: 350vh;
 }
-#z {
-	float: right;
-}
-#x {
-	font-size: 12px;
-	padding: 2px 6px;
-	background-color: black;
-	color: white;
-	border: none;
-}
-#x:hover {
-	background-color: inherit;
-}
-@keyframes example {
+@keyframes displayPreview {
 	from {height: 20px;}
 	to {height: 400px;}
 }
-#enter {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	background-color: black;
-	position: fixed;
-	height: 60vh;
-	width: 40%;
-	margin: 15vh 30% 25vh 30%;
-}
-#fname {
-	text-align: center;
-}
-button, #fname {
-	font-size: 32px;
-}
-button {
-	background-color: black;
-	border: .5px solid white;
-	color: white;
-}
-button:hover {
-	background-color: white;
-	color: #2b2c2e;
-}
-#footer, #header {
+/*
+
+
+	Section: header
+	Contains: menu, author;
+
+
+*/
+#header {
 	display: grid;
 	grid-template-columns: 1fr 2fr 1fr;
 	width: 100%;
@@ -88,10 +70,7 @@ button:hover {
 	position: fixed;
 	z-index: 100;
 }
-#footer {
-	bottom: 0;
-}
-#icons, #menu {
+#menu {
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
@@ -105,40 +84,64 @@ button:hover {
 	text-shadow: 1px 1px 1px black;
     font-family: 'Condiment', cursive;
 }
+/*
+
+
+	Section: Row
+	Contains: content, image;
+
+
+*/
 .row {
 	display: grid;
 	grid-template-columns: 50% 50%;
 	height: 100vh;
+	width: 100%;
 	align-items: center;
 }
 .content {
 	margin: 0 15%;
 }
-#namesubmit {
-	background: transparent;
-}
-#welcomevisitor {
-	display: flex;
+.image {
+	visibility: hidden;
 }
 .right {
 	justify-self: right;
 }
 img {
-	height: 100vh;
 	width: 48vw;
+	height: 100vh;
 }
-p {
-	margin: 24px 0;
-}
-.content a {
+.content a, .content_container a {
 	color: black;
 	background-color: white;
-	border: .5px solid black;
+	border-color: black;
 }
-.content a:hover {
+.content a:hover, .content_container a:hover {
 	color: white;
 	background-color: black;
 }
+.fas {
+	border: none;
+	font-size: 24px;
+	position: absolute;
+	bottom: 64px;
+}
+.content_container {
+	position: relative;
+	display: flex;
+	height: 100%;
+	width: 100%;
+	justify-content: center;
+	align-items: center;
+}
+/*
+
+
+	Section: default fonts and formatting
+
+
+*/
 a {
 	cursor: pointer;
 	text-decoration: none;
@@ -146,6 +149,9 @@ a {
 	padding: 4px 9px;
 	background: black;
 	border: .5px solid white;
+	font-size: 0.8rem;
+	letter-spacing: 0.125em;
+	font-weight: 400;
 }
 a:hover {
 	color: black;
@@ -154,6 +160,13 @@ a:hover {
 ul {
 	list-style-type: none;
 }
-p, h1 {
-    font-family: 'Titillium Web', sans-serif;
+h1 {
+	font-size: 3.5rem;
+	letter-spacing: -0.05em;
+	font-weight: 300;
+}
+p {
+	margin: 24px 0;
+	size: 16px;
+	font-weight: 300;
 }

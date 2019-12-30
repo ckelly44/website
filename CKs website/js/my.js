@@ -1,13 +1,18 @@
 var selector;
 var x = 1;
 var y = 1;
-function enterScript() {
-	var f = document.getElementById("fname").value;
-	$("#enter").fadeOut(1000,function(){$("#visitor").text(", " + f).hide().fadeIn(3000);});
-	var t = document.getElementById("namesubmit");
-	t.reset();
-	t.parentNode.removeChild(t);	
-}
+var inViewCounter = 0;
+window.addEventListener('keydown', function(e){
+	const key = e.keyCode;
+	if(key === 39 && inViewCounter !== 3) {
+		document.getElementById("p"+ ++inViewCounter).scrollIntoView({behavior: "smooth"});
+	}
+	if(key === 37 && inViewCounter !== 0) {
+		document.getElementById("p"+ --inViewCounter).scrollIntoView({behavior: "smooth"});
+	}
+	else
+		return;
+})
 function show(intValue) {
 	var id = "test" + intValue;
 	var x = document.getElementById(id);
@@ -18,7 +23,7 @@ function exitDiv() {
 	$(selector).hide();
 }
 $(document).ready(function(){
-	$("#iw").css('visibility', 'visible').hide().fadeIn(2000);
+	$("#i0").css('visibility', 'visible').hide().fadeIn(2000);
 });
 $(document).mouseup(function(e) 
 {
@@ -30,7 +35,7 @@ $(document).mouseup(function(e)
     }
 });
 $(window).scroll(function() {
-	var trigger = y * $("#welcome").height() - .75* $(window).height();
+	var trigger = y * $("#p0").height() - .75* $(window).height();
 	var id = "#i" + x;
 	if($(window).scrollTop() >= trigger && x < 4) {
 		$(id).css('visibility', 'visible').hide().fadeIn(2000);
