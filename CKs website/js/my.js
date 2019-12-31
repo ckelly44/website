@@ -24,6 +24,9 @@ function exitDiv() {
 }
 $(document).ready(function(){
 	$("#i0").css('visibility', 'visible').hide().fadeIn(2000);
+	var j = document.querySelector('.is-preload');
+	console.log(j);
+	j.classList.remove('is-preload');
 });
 $(document).mouseup(function(e) 
 {
@@ -38,6 +41,8 @@ $(window).scroll(function() {
 	var trigger = y * $("#p0").height() - .75* $(window).height();
 	var id = "#i" + x;
 	if($(window).scrollTop() >= trigger && x < 4) {
+		var j = document.querySelector('.is-preload');
+		j.classList.remove('is-preload');
 		$(id).css('visibility', 'visible').hide().fadeIn(2000);
 		x++;
 		y += 1;
