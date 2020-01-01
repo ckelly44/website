@@ -97,12 +97,15 @@ html {
 	margin: 0 15%;
 	transition: opacity 2s ease-in-out, transform 2s ease-in-out;
 }
-.is-preload.content {
+.is-hidden.content {
 	transform: translateX(-2rem);
 	opacity: 0;
 }
 .image {
-	visibility: hidden;
+	transition: opacity 2s ease-in-out;
+}
+.is-hidden.image {
+	opacity: 0;
 }
 .right {
 	justify-self: right;
