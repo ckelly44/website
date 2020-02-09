@@ -8,14 +8,13 @@
 
 //on load make first row visible
 $(document).ready(function(){
-	var j = document.querySelector('.is-hidden');
-	j.classList.remove('is-hidden');
-	j.ontransitionend = () => {
-		if(event.propertyName === 'transform'){
-			j = document.querySelector('.is-hidden');
-			j.classList.remove('is-hidden');
+	imgs = document.querySelectorAll('.is-hidden.image');
+	cnts = document.querySelectorAll('.is-hidden.content');
+	cnts[0].classList.remove('is-hidden');
+	cnts[0].ontransitionend = () => {
+		if(event.propertyName === 'opacity')
+			imgs[0].classList.remove('is-hidden');
 		};
-	};
 })
 
 /*
@@ -55,19 +54,25 @@ document.addEventListener('mouseup', function(e) {
 
 var x = 1; //counter for element scroll animations
 
+//keys off the end of the content animation
+function animateImage(i) {
+	cnts[i].ontransitionend = () => {
+		if(event.propertyName === 'opacity') {
+			imgs[i].classList.remove('is-hidden');
+		}
+	}
+}
 //make elements visible when scrolled to
 $(window).scroll(function() {
 	var trigger = x * $("#p0").height() - .75* $(window).height();
 	var id = "#i" + x;
 	if($(window).scrollTop() >= trigger && x < 4) {
-		var j = document.querySelector('.is-hidden');
-		j.classList.remove('is-hidden');
-		j = document.querySelector('.is-hidden');
-		j.classList.remove('is-hidden');
-		//$(id).css('visibility', 'visible').hide().fadeIn(2000);
-		x++;
+		cnts[x].classList.remove('is-hidden');
+		animateImage(x++);
+		//imgs[x++].classList.remove('is-hidden');
 		if(x == 4){
-		$(this).off('scroll');}
+			$(this).off('scroll');
+		}
 	}
 })
 
